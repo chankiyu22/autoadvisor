@@ -31,13 +31,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.5.0)
     columnize (0.3.6)
     commonjs (0.2.6)
     debugger (1.3.3)
@@ -103,11 +96,6 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.2)
-    sass (3.2.6)
-    sass-rails (3.2.6)
-      railties (~> 3.2.0)
-      sass (>= 3.1.10)
-      tilt (~> 1.3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -137,14 +125,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails (~> 3.2.1)
   debugger
   devise
   jquery-rails
   less-rails
   mysql2
   rails (= 3.2.12)
-  sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
   twitter-bootstrap-rails
