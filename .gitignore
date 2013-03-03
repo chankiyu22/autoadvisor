@@ -14,3 +14,8 @@
 /log/*.log
 /tmp
 .elasticbeanstalk/
+
+# AutoAdvisor stuff
+aws-eb-cli.zip
+config/initializers/secret_token.rb
+eb/
