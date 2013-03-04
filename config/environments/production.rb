@@ -3,7 +3,7 @@ Autoadvisor::Application.configure do
   
   config.action_mailer.default_url_options = {
     :host => 'autoadvisor.elasticbeanstalk.com',
-    :port => 79
+    :port => 80
   }
 
   # Code is not reloaded between requests
