@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315182744) do
+ActiveRecord::Schema.define(:version => 20130315183426) do
 
   create_table "sections", :force => true do |t|
     t.integer "spire_id"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20130315182744) do
     t.integer "size"
     t.string  "name"
     t.text    "description"
+    t.integer "time_slot_id"
+  end
+
+  create_table "time_slots", :force => true do |t|
+    t.string  "days"
+    t.integer "beg_min"
+    t.integer "beg_hour"
+    t.integer "end_min"
+    t.integer "end_hour"
   end
 
   create_table "users", :force => true do |t|
