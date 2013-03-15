@@ -1,5 +1,5 @@
 class CreateCredits < ActiveRecord::Migration
-  def up
+  def change
     create_table :credits do |t|
       t.string :name
       t.string :year

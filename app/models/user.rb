@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   belongs_to :credit
+  has_and_belongs_to_many :majors
 end
