@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228175155) do
+ActiveRecord::Schema.define(:version => 20130315182744) do
+
+  create_table "sections", :force => true do |t|
+    t.integer "spire_id"
+    t.string  "dept"
+    t.integer "class_number"
+    t.string  "class_string"
+    t.string  "section_number"
+    t.boolean "primary?"
+    t.string  "instructor"
+    t.integer "size"
+    t.string  "name"
+    t.text    "description"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
