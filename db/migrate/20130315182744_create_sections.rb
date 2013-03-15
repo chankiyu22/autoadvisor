@@ -6,7 +6,7 @@ class CreateSections < ActiveRecord::Migration
       t.integer :class_number
       t.string :class_string
       t.string :section_number
-      t.boolean :primary?
+      t.boolean :primary
       t.string :instructor
       t.integer :size
       t.string :name

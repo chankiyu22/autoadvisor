@@ -1,5 +1,5 @@
 class TimeSlot < ActiveRecord::Base
-  attr_accessible :beg_hour, :beg_min, :days, :end_hour, :end_min
+  attr_accessible :beg_hour, :beg_min, :days, :end_hour, :end_min, :sections
 
-  belongs_to :sections
+  has_many :sections
 end

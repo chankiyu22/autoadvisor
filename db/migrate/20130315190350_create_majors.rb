@@ -6,12 +6,12 @@ class CreateMajors < ActiveRecord::Migration
       t.string :dept
     end
 
-    create_table :users_majors, :id => false do |t|
+    create_table :majors_users, :id => false do |t|
     	t.references :user
     	t.references :major
     end
 
-    add_index :users_majors, [:user_id, :major_id]
-    add_index :users_majors, [:major_id, :user_id]
+    add_index :majors_users, [:user_id, :major_id]
+    add_index :majors_users, [:major_id, :user_id]
   end
 end

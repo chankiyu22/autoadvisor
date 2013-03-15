@@ -28,13 +28,21 @@ ActiveRecord::Schema.define(:version => 20130315190350) do
     t.string "dept"
   end
 
+  create_table "majors_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "major_id"
+  end
+
+  add_index "majors_users", ["major_id", "user_id"], :name => "index_majors_users_on_major_id_and_user_id"
+  add_index "majors_users", ["user_id", "major_id"], :name => "index_majors_users_on_user_id_and_major_id"
+
   create_table "sections", :force => true do |t|
     t.integer "spire_id"
     t.string  "dept"
     t.integer "class_number"
     t.string  "class_string"
     t.string  "section_number"
-    t.boolean "primary?"
+    t.boolean "primary"
     t.string  "instructor"
     t.integer "size"
     t.string  "name"
@@ -77,13 +85,5 @@ ActiveRecord::Schema.define(:version => 20130315190350) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
-
-  create_table "users_majors", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "major_id"
-  end
-
-  add_index "users_majors", ["major_id", "user_id"], :name => "index_users_majors_on_major_id_and_user_id"
-  add_index "users_majors", ["user_id", "major_id"], :name => "index_users_majors_on_user_id_and_major_id"
 
 end

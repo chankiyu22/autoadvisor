@@ -1,5 +1,5 @@
 class Credit < ActiveRecord::Base
-  attr_accessible :dept, :gpa, :name, :number, :year
+  attr_accessible :dept, :gpa, :name, :number, :year, :user
 
-  has_one :user
+  belongs_to :user
 end

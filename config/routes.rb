@@ -3,6 +3,7 @@ Autoadvisor::Application.routes.draw do
 
   root :to => 'pages#main'
   devise_for :users
+  resources :sections, :majors
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
