@@ -2,6 +2,7 @@ Autoadvisor::Application.routes.draw do
   get "pages/main"
 
   root :to => 'pages#main'
+  get '/profile', to: 'pages#profile'
   devise_for :users
 
   # The priority is based upon order of creation:
