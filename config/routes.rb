@@ -3,6 +3,7 @@ Autoadvisor::Application.routes.draw do
 
   root :to => 'pages#main'
   get '/profile', to: 'pages#profile'
+  get '/transcript', to: 'pages#transcript'
   devise_for :users
 
   # The priority is based upon order of creation:
