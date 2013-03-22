@@ -10,3 +10,8 @@ admin = User.create(:email => "autoadvisoraws@gmail.com", :password => "password
 admin.admin = true
 admin.confirmed_at = DateTime.now
 admin.save
+
+user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
+user0.admin = false
+user0.confirmed_at = DateTime.now
+user0.save
