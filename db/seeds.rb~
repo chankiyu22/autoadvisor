@@ -25,6 +25,14 @@ section = Section.create(:class_number => 320,
 admin = User.new(:email => "autoadvisoraws@gmail.com", :password => "password", :password_confirmation => "password")
 admin.admin = true
 admin.confirmed_at = DateTime.now
+<<<<<<< HEAD
+admin.save
+
+user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
+user0.admin = false
+user0.confirmed_at = DateTime.now
+user0.save
+=======
 admin.majors << cmpsci
 admin.credits << Credit.create(:dept => "CMPSCI",
 															 :gpa => 2.65,
@@ -32,8 +40,4 @@ admin.credits << Credit.create(:dept => "CMPSCI",
 															 :number => "320",
 															 :year => "2010")
 admin.save
-
-user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
-user0.admin = false
-user0.confirmed_at = DateTime.now
-user0.save
+>>>>>>> cff3ff0ab0a75b182ad4b504bb9b39032dc7d6e0

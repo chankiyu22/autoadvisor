@@ -3,6 +3,7 @@ Autoadvisor::Application.routes.draw do
 
   root :to => 'pages#main'
   devise_for :users
+  resources :sections, :majors
 
   # beta used only
   # /app/views/pages/profile.html.erb
