@@ -1,22 +1,43 @@
-<table>
-  <tr>
-    <td>Name</td>
-    <td><%= @email %></td>
-  </tr>
-  <tr>
-    <td>Major</td>
-    <td>...</td>
-  </tr>
-  <tr>
-    <td>Course Taken</td>
-    <td><a href='#'>See course taken</a></td>
-  </tr>
-  <tr>
-    <td>Credit Earned</td>
-    <td>.../120</td>
-  </tr>
-  <tr>
-    <td>Link State</td>
-    <td>Spire: Linked with netid <a href='#'>...</a></td>
-  </tr>
+<table id='profile'>
+  <tr valign=top>
+    <td>
+      <litem>Name</litem>
+    </td><td>
+      <p class='ritem'><%= @email %></p>
+    </td>
+  </tr><tr valign=top>
+    <td>
+      <litem>Major</litem>
+    </td><td>
+      <p class='ritem'>
+        <% @majors.each do |major| %>
+          <%= major.degree %> <%= major.name %><br />
+        <% end %>
+      </p>
+    </td>
+  </tr><tr valign=top>
+    <td>
+<litem>Course Taken</litem>
+</td>
+<td>
+<p class='ritem'>
+<% @course_taken.each do |course| %>
+  <%= course.dept %><%= course.number %> <br />
+<% end %>
+</p>
+</td>
+</tr>
+<tr valign=top>
+<td>
+<litem>Credit Earned</litem>
+</td><td>
+<p class='ritem'>...</p>
+</td></tr>
+<tr valign=top><td>
+<litem>Link State</litem>
+</td><td>
+<p class='ritem'>Spire: Linked with netid <a href='#'>...</a></p>
+</profileitem>
+</td>
+</tr>
 </table>

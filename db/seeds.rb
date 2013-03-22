@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+#This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 cmpsci = Major.create(:degree => "B.Sc", :dept => "CMPSCI", :name => "Computer Science")
+econ = Major.create(:degree => "B.A", :dept => "ECON", :name => "Economics")
+acct = Major.create(:degree => "B.A", :dept => "ACCT", :name => "Account")
 
 time = TimeSlot.create(:beg_hour => 16, :beg_min => 0, :end_hour => 17, :end_min => 15, :days => "TuTh")
 
@@ -26,6 +28,8 @@ admin = User.new(:email => "autoadvisoraws@gmail.com", :password => "password", 
 admin.admin = true
 admin.confirmed_at = DateTime.now
 admin.majors << cmpsci
+admin.majors << econ
+admin.majors << acct
 admin.credits << Credit.create(:dept => "CMPSCI",
 															 :gpa => 2.65,
 															 :name => "Software Engineering",
@@ -36,4 +40,5 @@ admin.save
 user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
 user0.admin = false
 user0.confirmed_at = DateTime.now
+user0.majors << econ
 user0.save
