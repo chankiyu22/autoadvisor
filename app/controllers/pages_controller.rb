@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     usernow = User.find(session[:'warden.user.user.key'][1][0])
     @email = usernow.email
     @majors = usernow.majors
-    @course_taken = usernow.credits
+    @courses = usernow.sections
     @credit
   end
 end

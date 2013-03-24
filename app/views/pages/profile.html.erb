@@ -11,19 +11,18 @@
     </td><td>
       <p class='ritem'>
         <% @majors.each do |major| %>
-          <%= major.degree %> <%= major.name %><br />
+          <%= major.degree %> <%= major.name %><br/>
         <% end %>
       </p>
     </td>
   </tr><tr valign=top>
     <td>
-<litem>Course Taken</litem>
-</td>
-<td>
-<p class='ritem'>
-<% @course_taken.each do |course| %>
-  <%= course.dept %><%= course.number %> <br />
-<% end %>
+      <litem>Course Taken</litem>
+    </td><td>
+      <p class='ritem'>
+        <% @courses.each do |course| %>
+          <%= course.class_string %> <br />
+        <% end %>
 </p>
 </td>
 </tr>

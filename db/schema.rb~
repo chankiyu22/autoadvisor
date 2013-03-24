@@ -59,14 +59,6 @@ ActiveRecord::Schema.define(:version => 20130315190350) do
     t.integer "time_slot_id"
   end
 
-  create_table "sections_users", :id => false, :force => true do |t|
-    t.integer "section_id"
-    t.integer "user_id"
-  end
-
-  add_index "sections_users", ["section_id", "user_id"], :name => "index_sections_users_on_section_id_and_user_id"
-  add_index "sections_users", ["user_id", "section_id"], :name => "index_sections_users_on_user_id_and_section_id"
-
   create_table "time_slots", :force => true do |t|
     t.string  "days"
     t.integer "beg_min"

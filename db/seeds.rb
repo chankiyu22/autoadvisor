@@ -5,24 +5,36 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
 cmpsci = Major.create(:degree => "B.Sc", :dept => "CMPSCI", :name => "Computer Science")
-econ = Major.create(:degree => "B.A", :dept => "ECON", :name => "Economics")
-acct = Major.create(:degree => "B.A", :dept => "ACCT", :name => "Account")
+econ = Major.create(:degree => "B.BA", :dept => "ECON", :name => "Economics")
+acct = Major.create(:degree => "B.BA", :dept => "ACCT", :name => "Account")
 
-time = TimeSlot.create(:beg_hour => 16, :beg_min => 0, :end_hour => 17, :end_min => 15, :days => "TuTh")
+time0 = TimeSlot.create(:beg_hour => 16, :beg_min => 0, :end_hour => 17, :end_min => 15, :days => "TuTh")
+time1 = TimeSlot.create(:beg_hour => 11, :beg_min => 15, :end_hour => 12, :end_min => 5, :days => "MWF")
 
-section = Section.create(:class_number => 320,
-												 :class_string => "CMPSCI320",
-												 :dept => "CMPSCI",
-												 :description => nil,
-												 :instructor => "Yuriy Brun",
-												 :name => "Software Engineering",
-												 :primary => true,
-												 :section_number => "01",
-												 :size => 40,
-												 :spire_id => 13680,
-												 :time_slot => time)
+cmpsci320_L1 = Section.create(:instructor => "Yuriy Brun",
+		:section_number => "01",
+		:size => 40,
+		:spire_id => 13680,
+		:time_slot => time0,
+		:class_number => 320,
+		:class_string => "CMPSCI320",
+		:dept => "CMPSCI",
+		:description => nil,
+		:name => "Software Engineering",
+		:primary => true)
+
+cmpsci326_L1 = Section.create(:class_number => 326,
+		:class_string => "CMPSCI326",
+		:dept => "CMPSCI",
+		:description => nil,
+		:name => "Web Programming",
+		:primary => true,
+		:instructor => "Tim",
+		:section_number => "01",
+		:size => 40,
+		:spire_id => 12345,
+		:time_slot => time1)
 
 admin = User.new(:email => "autoadvisoraws@gmail.com", :password => "password", :password_confirmation => "password")
 admin.admin = true
@@ -30,11 +42,8 @@ admin.confirmed_at = DateTime.now
 admin.majors << cmpsci
 admin.majors << econ
 admin.majors << acct
-admin.credits << Credit.create(:dept => "CMPSCI",
-															 :gpa => 2.65,
-															 :name => "Software Engineering",
-															 :number => "320",
-															 :year => "2010")
+admin.sections << cmpsci320_L1
+admin.sections << cmpsci326_L1
 admin.save
 
 user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
