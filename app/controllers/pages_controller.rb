@@ -7,6 +7,6 @@ class PagesController < ApplicationController
     @email = usernow.email
     @majors = usernow.majors
     @courses = usernow.sections
-    @credit
+    @credit = usernow.credits
   end
 end
