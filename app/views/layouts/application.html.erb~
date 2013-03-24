@@ -59,7 +59,7 @@
           </div>
           <div class="span3">
             <div class="well sidebar-nav">
-              <%= render 'layouts/sidebar' %>
+              <%= render 'sidebar' %>
             </div><!--/.well -->
           </div><!--/span-->
         </div><!--/row-->

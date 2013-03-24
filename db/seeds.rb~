@@ -43,12 +43,6 @@ admin.majors << cmpsci
 admin.majors << econ
 admin.majors << acct
 admin.sections << cmpsci320_L1
-admin.sections << cmpsci326_L1
-admin.credits << Credit.new(:name => "autoadvisor",
-                            :year => "2010",
-                            :gpa => 2.65,
-                            :dept => "Computer Science",
-                            :number => "20087367")
 admin.save
 
 user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")
