@@ -12,3 +12,21 @@ p.ritem {
   padding-left: 50px;
   padding-bottom: 10px;
 }
+
+table.transcript {
+  width: 700px;
+  margin: auto;
+  border-style: solid;
+}
+
+.head {
+  background: #CDCDCD;
+}
+
+.subhead {
+  background: #DEDEDE;
+}
+
+tr.item:hover {
+  background: #EFEFEF;
+}
