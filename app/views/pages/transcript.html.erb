@@ -1,0 +1,74 @@
+<% provide(:title, 'Transcript') %>
+
+<table class="transcript">
+  <tr class='head'>
+    <th colspan="4">Transcript</th>
+  </tr>
+  <tr class='subhead'>
+    <td>Year</td><td>Course</td><td>Course Name</td><td>Grade</td>
+  </td>
+  <tr class='item'>
+    <td>2010</td><td>CMPSCI320</td><td>Introduction of Software Engineering</td><td>A+</td>
+  </tr>
+  <tr class='item'>
+    <td>2010</td><td>CMPSCI383</td><td>Artificial Intelligence</td><td>A+</td>
+  </tr>
+  <tr class='subhead'>
+    <td colspan='3' align='right'>Credit Taken</td><td align='center'>33</td>
+  </tr>
+  <tr class='subhead'>
+    <td colspan='3' align='right'>GPA</td><td align='center'>4.3</td>
+  </tr>
+</table>
+
+<br />
+<br />
+
+<form method="get" action="transcript">
+  <table class='transcript'>
+    <tr>
+      <th class='head'>
+	Choose a transcript to upload:
+      </td>
+    </tr>
+    <tr align='center'>
+      <td>
+        <br>
+	<input type="file" name="fileField" size="30"><br>
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td class='manual_button' align='center' onClick="return alert('[Beta Used Only]\nTranscript Submitted')">Submit</td>
+    </tr>
+  </table>
+</form>
+<br />
+
+<div>
+  <form method="get" action="transcript" >
+    <table class='transcript'>
+<tr>
+<th class='head' colspan='2'>
+Add classes manually:
+</th>
+</tr>
+      <tr align='center'>
+        <td valign="top">
+          SIPRE Course Number:<br/>
+          <input type="text" name="spire_course_id" size="10">
+        </td>
+        <td>
+	Course Name: (e.g. MATH) <br /><input type="text" name="courseName" size="30"><br>
+	Course Number: (e.g. 131)<br /><input type="text" name="courseNumber" size="3"><br>
+        </td>
+      </tr>
+      <tr align='center'>
+        <td colspan='2'>
+	  Grade: (e.g. A-)<br />
+          <input type="text" name="grade" size="2">
+	<input type="submit" name="maunualSubmit" value="submit">
+    </table>
+<br />
+   </form>
+</div>
