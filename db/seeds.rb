@@ -49,6 +49,18 @@ admin.credits << Credit.new(:name => "autoadvisor",
                             :gpa => 2.65,
                             :dept => "Computer Science",
                             :number => "20087367")
+admin.past_courses << PastCourse.new(:year => "2010",
+                                     :course_code => "CMPSCI100",
+                                     :course_name => "My Course Name",
+                                     :grade => "A")
+admin.past_courses << PastCourse.new(:year => "2010",
+                                     :course_code => "CMPSCI120",
+                                     :course_name => "I Dont Know",
+                                     :grade => "B+")
+admin.past_courses << PastCourse.new(:year => "2011",
+                                     :course_code => "ECON103",
+                                     :course_name => "Microeconomics",
+                                     :grade => "A-")
 admin.save
 
 user0 = User.create(:email => "test@gmail.com", :password => "password", :password_confirmation => "password")

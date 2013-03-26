@@ -1,0 +1,5 @@
+class Past_Course < ActiveRecourd::Base
+  atti_accessible :class, :year, :grade, :user
+
+  belongs_to :credit, :user
+end

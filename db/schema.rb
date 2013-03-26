@@ -75,6 +75,22 @@ ActiveRecord::Schema.define(:version => 20130315190350) do
     t.integer "end_hour"
   end
 
+  create_table "past_courses", :force => true do |t|
+    t.string "year"
+    t.string "course_code"
+    t.string "course_name"
+    t.string "grade"
+    t.string "past_course_id"
+  end
+
+  create_table "past_courses_users", :id => false, :force => true do |t|
+    t.integer "past_course_id"
+    t.integer "user_id"
+  end
+
+  add_index "past_courses_users", ["past_course_id", "user_id"], :name => "index_past_courses_users_on_past_course_id_and_user_id"
+  add_index "past_courses_users", ["user_id", "past_course_id"], :name => "index_past_courses_users_on_user_id_and_past_course_id"
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false

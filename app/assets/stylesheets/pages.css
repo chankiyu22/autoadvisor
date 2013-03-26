@@ -14,7 +14,7 @@ p.ritem {
 }
 
 table.transcript {
-  width: 700px;
+  width: 600px;
   margin: auto;
   border-style: solid;
 }
@@ -29,4 +29,16 @@ table.transcript {
 
 tr.item:hover {
   background: #EFEFEF;
+}
+
+td.manual_button {
+  border-style: solid;
+}
+
+td.manual_button:hover {
+  background: #EEEEEE;
+}
+
+td.manual_button:active {
+  background: #777777;
 }
