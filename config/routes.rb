@@ -14,6 +14,10 @@ Autoadvisor::Application.routes.draw do
   get '/transcript', to: 'pages#transcript'
   # /app/views/pages/friends.html.erb [not yet created]
   get '/friends', to: 'pages#friends'
+
+  #upload coruse or transcript
+  get '/upload_course', to: 'uploads#upload_course'
+  get '/upload_transcript', to: 'uploads#upload_transcript'
   # ylno desu ateb
 
   # The priority is based upon order of creation:
