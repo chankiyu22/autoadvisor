@@ -37,9 +37,14 @@ class UploadsController < ApplicationController
 		end
 	end
 
-	#Deletes the selected course information from the users records.
+	#Deletes the selected course information from the users records based
+	#on couse code and year.
 	def delete
 		usernow = User.find(session[:'warden.user.user.key'][1][0])
+		obj = usernow.past_courses.find(:all, :conditions => 
+				["past_courses.course_code IN (?) AND past_courses.year IN(?)",
+				params[:courseCode], params[:year]])
+		obj.each {|o| o.destroy}
 		redirect_to :action=> 'transcript',:controller=>'pages'
 	end
 

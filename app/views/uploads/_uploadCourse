@@ -2,7 +2,7 @@
   <%= form_tag({:action=> :upload_course, :controller=>:uploads},:method=>:get, :multipart=>'true') do %>
     <table class='transcript'>
 <tr> <th class='head' colspan='2'> ADD TRANSCRIPT ITEM </th> </tr>
-<tr><td colspan='2' align='center'>Disclamer: you cannot delete courses yet!</td></tr>
+<tr></td></tr>
       <tr align='center'>
         <td valign="top">
           Year:<br/>

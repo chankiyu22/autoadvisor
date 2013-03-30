@@ -13,10 +13,7 @@
     <td><%= c.grade %></td>
     <td align='right'>
 
-      <%= form_tag({:action=> :delete, :controller=>:uploads}, :method=>:get) do %>
-      <%= hidden_field_tag :code=>  "code"%>
-      <%= submit_tag "delete" %>
-      <%end%>
+      <%= link_to "Delete", delete_path(:action=>'delete', :courseCode => c.course_code, :year => c.year) %>
 
   </tr>
   <% end %>
