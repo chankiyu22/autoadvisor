@@ -13,5 +13,7 @@
   <%= text_field(:section, :instructor) %>
   <%= label_tag(:size, "Class Size:") %>
   <%= text_field(:section, :size) %>
+  <%= label_tag(:description, "Description") %>
+  <%= text_area(:section, :description) %>
   <%= submit_tag("Add") %>
 <% end %>
