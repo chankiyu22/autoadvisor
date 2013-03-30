@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def transcript
+    @u = session
     usernow = User.find(session[:'warden.user.user.key'][1][0])
     @past_course = usernow.past_courses
   end

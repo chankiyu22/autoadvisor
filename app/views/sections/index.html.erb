@@ -2,13 +2,26 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Spire ID</th>
+    <th>Course Code</th>
+    <th>Course Name</th>
+    <th>Section Number</th>
+    <th>Time</th>
+    <th>Instructor</th>
+    <th>Size</th>
   </tr>
 
 <% @sections.each do |section| %>
   <tr>
+    <td><%= section.spire_id %></td>
+    <td><%= section.class_string %></td>
+    <td><%= section.name %></td>
+    <td><%= section.section_number %></td>
+    <td>
+      
+    </td>
+    <td><%= section.instructor %></td>
+    <td><%= section.size %></td>
     <td><%= link_to 'Show', section %></td>
     <td><%= link_to 'Edit', edit_section_path(section) %></td>
     <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
