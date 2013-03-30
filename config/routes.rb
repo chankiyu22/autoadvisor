@@ -16,8 +16,9 @@ Autoadvisor::Application.routes.draw do
   get '/friends', to: 'pages#friends'
 
   #upload coruse or transcript
+  get '/delete', to: 'uploads#delete'
   get '/upload_course', to: 'uploads#upload_course'
-  get '/upload_transcript', to: 'uploads#upload_transcript'
+  post '/upload_transcript', to: 'uploads#upload_transcript'
   # ylno desu ateb
 
   # The priority is based upon order of creation:

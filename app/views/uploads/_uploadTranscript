@@ -1,12 +1,13 @@
 <div>
-<%= form_tag({:action=> :upload_transcript, :controller=>:uploads},:method=>:get, :multipart=>'true' ) do %>
+<%= form_tag({:action=> :upload_transcript, :controller=>:uploads,:method=>:get}, {:multipart=>'true'} ) do %>
   <table class='transcript'>
     <tr>
       <th class='head'>
-	UPLOAD TRANSCRIPT 
+	UPLOAD TRANSCRIPT*
       </th> 
     </tr>
     <tr align='center'>
+
       <td>
         <br>
 	<%= file_field_tag 'file' %><br>

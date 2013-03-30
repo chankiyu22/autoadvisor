@@ -1,17 +1,21 @@
 class UploadsController < ApplicationController
 
-	#Upload a transcirpt and render the filename. 
+	#Upload a transcirpt. if there is a file to upload temporaraly save it
+	#in "public/uploadedTranscript", then delete it after parsing. if no 
+	#file stay on same page.
 	def upload_transcript
 		usernow = User.find(session[:'warden.user.user.key'][1][0])
-		@transcript_file = params[:file]
-		if(!@transcript_file.blank?)
-			#result = system("path/to/parse.sh #{@transcript_file}")
-			#just for now print out the filename...
-			render :text => "uploaded "+@transcript_file
-		else
-			#there was nothing to upload
-			redirect_to :action => 'transcript', :controller => 'pages'
-		end
+		if (!params[:file].blank?)
+			transcriptFile =  params[:file].original_filename
+    		directory = "public/uploadedTranscript"
+    		path = File.join(directory, transcriptFile)
+    		File.open(path, "wb") { |f| f.write(params[:file].read)}
+    		#callParser("public/uploadedTranscript/"+transcriptFile)
+    		File.delete("public/uploadedTranscript/"+transcriptFile)
+    		redirect_to :action => 'transcript', :controller => 'pages'
+    	else
+    		redirect_to :action => 'transcript', :controller => 'pages'
+    	end
 	end
 
 	#Upload an individual course then redirect back to the transcript
@@ -25,4 +29,14 @@ class UploadsController < ApplicationController
 		usernow.past_courses << PastCourse.new(:year => year, :course_name => courseName, :course_code => courseCode, :grade => grade)
 		redirect_to :action =>'transcript', :controller => 'pages'
 	end
+
+	#Deletes the selected course information from the users records.
+	def delete
+		usernow = User.find(session[:'warden.user.user.key'][1][0])
+
+		redirect_to :action=> 'transcript',:controller=>'pages'
+		
+
+	end
+
 end

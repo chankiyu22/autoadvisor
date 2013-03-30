@@ -1,21 +1,32 @@
 <table class="transcript">
   <tr class='head'>
-    <th colspan="4">TRANSCRIPT</th>
+    <th colspan="5">TRANSCRIPT</th>
   </tr>
-  <tr class='subhead'>
-    <td>Year</td><td>Course</td><td>Course Name</td><td>Grade</td>
+  <tr class='subhead' >
+    <td>Year</td><td>Course</td><td>Course Name</td><td>Grade</td><td align='right'>Delete?</td>
   </tr>
   <% @past_course.each do |c| %>
   <tr class='item'>
-    <td><%= c.year %></td><td><%= c.course_code %></td><td><%= c.course_name %></td><td><%= c.grade %></td>
+    <td><%= c.year %></td>
+    <td><%= c.course_code %></td>
+    <td><%= c.course_name %></td>
+    <td><%= c.grade %></td>
+    <td align='right'>
+
+      <%= form_tag({:action=> :delete, :controller=>:uploads}, :method=>:get) do %>
+      <%= hidden_field_tag :code=>  "code"%>
+      <%= submit_tag "delete" %>
+      <%end%>
+
   </tr>
   <% end %>
   <tr class='subhead'>
-    <td colspan='3' align='right'>Credit Taken</td><td align='center'>33</td>
+    <td colspan='4' align='right'>Credit Taken</td><td align='center'>33</td>
   </tr>
   <tr class='subhead'>
-    <td colspan='3' align='right'>GPA</td><td align='center'>4.3</td>
+    <td colspan='4' align='right'>GPA</td><td align='center'>4.3</td>
   </tr>
+
 </table>
 
 <br />
@@ -28,3 +39,8 @@
 <div >
    <%= render 'uploads/uploadCourse' %>
 </div>
+
+<p>
+  * Please only upload Unofficial UMass transcirpts,<br>
+  found on your Spire account: Spire->Menu->Academics->Unofficial Transcript
+</p>
