@@ -32,7 +32,7 @@ class UploadsController < ApplicationController
 					:grade => params[:grade])
 			redirect_to :action =>'transcript', :controller => 'pages'
 		else
-			#at least 1 field was left blank
+			#at least 1 field was left blank 
 			redirect_to :action =>'transcript', :controller => 'pages'
 		end
 	end
