@@ -8,14 +8,9 @@
   <li><%= link_to "Schedule", "/schedule"  %></li>
   <li><%= link_to "Transcript", "/transcript"  %></li>
   <li><%= link_to "Friends", "/friends"  %></li>
-  <br />
-
-  <% if usernow.admin %>
-  <li>ADMINISTRATIVE TOOLS</li>
-  <li><%= link_to 'Major Control' , "/majors" %></li>
-  <li><%= link_to 'Course Control' , "/sections" %></li>
-  <li><%= link_to 'Main Page Control' %></li>
-  <% end %>
+  <hr>
+  <li><%= link_to 'My Majors' , "/majors" %></li>
+  <li><%= link_to 'My Courses' , "/sections" %></li>
 </ul>
 <% else %>
 <h3>Auto Advisor</h3>
