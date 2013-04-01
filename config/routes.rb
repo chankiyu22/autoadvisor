@@ -20,6 +20,13 @@ Autoadvisor::Application.routes.draw do
   get '/upload_course', to: 'uploads#upload_course'
   post '/upload_transcript', to: 'uploads#upload_transcript'
   # ylno desu ateb
+  
+  #Adding following and followers actions to the Users controller. 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
