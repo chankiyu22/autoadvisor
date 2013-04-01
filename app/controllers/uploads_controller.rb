@@ -3,6 +3,9 @@ class UploadsController < ApplicationController
 	#Upload a transcirpt. if there is a file to upload temporaraly save it
 	#in "public/uploadedTranscript", then delete it after parsing. if no 
 	#file stay on same page.
+	
+	#!!!!!!!!YOU NEED TO CREATE public/uploadTranscript FOR THIS TO WORK!!!!!!!
+	
 	def upload_transcript
 		usernow = User.find(session[:'warden.user.user.key'][1][0])
 		if (!params[:file].blank?)
@@ -32,7 +35,7 @@ class UploadsController < ApplicationController
 					:grade => params[:grade])
 			redirect_to :action =>'transcript', :controller => 'pages'
 		else
-			#at least 1 field was left blank
+			#at least 1 field was left blank 
 			redirect_to :action =>'transcript', :controller => 'pages'
 		end
 	end
