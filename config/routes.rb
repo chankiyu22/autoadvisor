@@ -15,6 +15,13 @@ Autoadvisor::Application.routes.draw do
   # /app/views/pages/friends.html.erb [not yet created]
   get '/friends', to: 'pages#friends'
   # ylno desu ateb
+  
+  #Adding following and followers actions to the Users controller. 
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
